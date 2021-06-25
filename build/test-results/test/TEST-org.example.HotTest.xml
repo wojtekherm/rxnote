@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.HotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-25T10:42:25" hostname="polpc07489" time="20.073">
+  <properties/>
+  <testcase name="testHot()" classname="org.example.HotTest" time="20.073"/>
+  <system-out><![CDATA[ping 11
+ping 12
+ping 13
+ping 14
+ping 15
+ping 16
+ping 17
+ping 18
+ping 19
+completed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
