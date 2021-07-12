@@ -9,15 +9,15 @@ import java.util.List;
 
 public class HotTest {
 
-    private Observable<String> hot(int count) {
-        // dirty code without thread synchronization and unsubscrption handling
+    private static Observable<String> hot(int count) {
+        // dirty code without thread synchronization and any unsubscribe handling
 
         List<Emitter<String>> emitters = new ArrayList<>();
 
         new Thread(() -> {
             for (int i = 0; i < count; i++) {
                 final int x = i;
-                emitters.forEach(em -> em.onNext("ping "+ x));
+                emitters.forEach(em -> em.onNext("ping " + x));
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
@@ -40,7 +40,8 @@ public class HotTest {
         hot.subscribe(
                 System.out::println,
                 Throwable::printStackTrace,
-                () -> System.out.println("completed"));
+                () -> System.out.println("completed")
+        );
 
         Thread.sleep(15_000);
     }

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class ColdTest {
 
-    private Observable<String> cold(int count) {
+    private static Observable<String> cold(int count) {
         return Observable.create(s -> new Thread(() -> {
             for (int i = 0; i < count; i++) {
                 if (s.isDisposed()) {
@@ -28,7 +28,8 @@ public class ColdTest {
         cold(20).subscribe(
                 System.out::println,
                 Throwable::printStackTrace,
-                () -> System.out.println("completed"));
+                () -> System.out.println("completed")
+        );
 
         Thread.sleep(15_000);
     }

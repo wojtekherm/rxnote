@@ -59,7 +59,7 @@ public class ConcatTest {
     public void concatMapEager() throws InterruptedException {
         Observable.fromArray("Ala", "Julka", "Wally")
                 .concatMapEager(name -> emitOnePerSecond(name, 5))
-                .subscribe(s-> System.out.println("$$$$$$$$$ "+s + " " + now()));
+                .subscribe(s -> System.out.println("$ " + s + " " + now()));
         sleep(10_000);
     }
 }

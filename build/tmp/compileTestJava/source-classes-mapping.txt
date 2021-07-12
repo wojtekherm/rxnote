@@ -1,6 +1,6 @@
-org/example/ColdTest.java
- org.example.ColdTest
 org/example/ConcatTest.java
  org.example.ConcatTest
+org/example/ColdTest.java
+ org.example.ColdTest
 org/example/HotTest.java
  org.example.HotTest
