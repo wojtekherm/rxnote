@@ -3,10 +3,10 @@ package org.example;
 import io.reactivex.rxjava3.core.Observable;
 import org.junit.jupiter.api.Test;
 
-public class ColdTest {
+public class SimpleTest {
 
-    private static Observable<String> cold(int count) {
-        return Observable.create(s -> new Thread(() -> {
+    private static Observable<String> simpleObservable(int count) {
+        return Observable.create(s -> {
             for (int i = 0; i < count; i++) {
                 if (s.isDisposed()) {
                     return;
@@ -20,18 +20,16 @@ public class ColdTest {
                 }
             }
             s.onComplete();
-        }).start());
+        });
     }
 
     @Test
-    public void testCold() throws InterruptedException {
-        cold(20).subscribe(
+    public void testSimple() {
+        simpleObservable(20).subscribe(
                 System.out::println,
                 Throwable::printStackTrace,
                 () -> System.out.println("completed")
         );
         System.out.println("subscribe method ended");
-
-        Thread.sleep(15_000);
     }
 }

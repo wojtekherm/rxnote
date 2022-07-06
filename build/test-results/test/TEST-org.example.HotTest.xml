@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.HotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-30T11:03:49" hostname="polpc07489" time="20.074">
+<testsuite name="org.example.HotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-06T10:36:29" hostname="polpc07489" time="20.069">
   <properties/>
-  <testcase name="testHot()" classname="org.example.HotTest" time="20.074"/>
-  <system-out><![CDATA[ping 11
+  <testcase name="testHot()" classname="org.example.HotTest" time="20.069"/>
+  <system-out><![CDATA[subscribe method ended
+ping 11
 ping 12
 ping 13
 ping 14

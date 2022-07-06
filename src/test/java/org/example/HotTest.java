@@ -42,6 +42,7 @@ public class HotTest {
                 Throwable::printStackTrace,
                 () -> System.out.println("completed")
         );
+        System.out.println("subscribe method ended");
 
         Thread.sleep(15_000);
     }
